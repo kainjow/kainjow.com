@@ -41,6 +41,10 @@
 	.about {
 		text-align: center;
 	}
+	.contact {
+		text-align: center;
+		font-size: 9pt;
+	}
 	#source {
 		font-size: 9pt;
 	}
@@ -69,16 +73,59 @@
 		width: 16px;
 		height: 11px;
 	}
+	noscript {
+		font-size: 8pt;
+		color: red;
+	}
 	</style>
+	<script type="text/javascript">
+	function degreesToRadians(degrees) {
+		return degrees * (Math.PI / 180);
+	}
+	function randomFloat(min, max) {
+		return min + (max - min) * Math.random();
+	}
+	function decryptStr(str) {
+		var newStr = "";
+		for (i = 0; i < str.length; ++i) {
+			newStr += String.fromCharCode(str.charCodeAt(i) ^ 49);
+		}
+		return newStr;
+	}
+	function dodraw() {
+	  var ctx = document.getElementById("cnvs").getContext("2d");
+	  var str = decryptStr("ZPX_[^FqZPX_[^FR^\\");
+	  var r, g, b;
+	  for (i = 0, x = 10, y = 20; i < str.length; ++i) {
+	  	if (i >= 7 && i <= 14) {
+		  	r = 0; g = 96; b = 255;
+	  	} else {
+	  		r = g = b = 0;
+	  	}
+	  	ctx.fillStyle = "rgba(" + r + ", " + g + ", " + b + ", " + randomFloat(0.3, 0.85) + ")";
+	  	ctx.font = "bold " + randomFloat(18, 24) + "px sans-serif";
+	  	var ch = str.charAt(i);
+	  	ctx.save();
+	  	ctx.translate(x, y);
+		  ctx.rotate(degreesToRadians(randomFloat(-15, 15)));
+	    ctx.fillText(ch, 0, 0);
+		  ctx.restore();
+	  	x += ctx.measureText(ch).width * randomFloat(0.9,1.1);
+	  }
+	}
+	</script>
 </head>
-<body>
+<body onload="dodraw()">
 
 <div id="body">
 <div id="header"></div>
 <div id="content">
 	
 <p class="about">Hello, my name is Kevin Wojniak and I'm a software developer.</p>
-<p class="about">email me: <strong>kainjow@<span style="display:none">null</span>kain<span style="display:none">@blah</span>jow.com</strong></p>
+<p class="contact">email/twitter:<br/>
+<canvas id="cnvs" width="250" height="25"><noscript>JavaScript is required to view my email address!</noscript></canvas>
+</p>
+<p class="about"></p>
 <p class="about" id="source">Source code (<a href="license.txt">license</a>) is available on <a href="https://github.com/kainjow">Github</a> and <a href="http://code.google.com/p/kaincode/">Google Code</a>.<br/>All downloads require Mac OS X 10.6.8 or greater unless stated otherwise.</p>
 
 <div class="product">
