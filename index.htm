@@ -1,20 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>kainjow</title>
 	<style type="text/css">
 	body {
 		margin: 0;
-		padding-top: 20px;
+		padding-top: 10px;
 	}
 	#body {
-		width: 700px;
+		width: 650px;
 		font-family: sans-serif;
 		margin: 0 auto;
-	}
-	#content {
-		margin: 6pt;
 	}
 	#header {
 		width: 100%;
@@ -31,170 +28,160 @@
 	a:hover {
 		text-decoration: underline;
 	}
-	p {
-		font-size: 11pt;
-	}
-	.links {
-		font-size: 9pt;
-		padding-left: 4px;
-	}
 	.about {
-		text-align: center;
+		font-size: 12pt;
 	}
-	.contact {
-		text-align: center;
-		font-size: 9pt;
-	}
-	#source {
-		font-size: 9pt;
-	}
-	h1 {
-		font-size: 15pt;
+	.projectsrow {
+		width: 100%;
 	}
 	.product {
-		clear: both;
-	}
-	.icon {
+		width: 200px;
+		/*background-color: rgb(230,230,230);*/
 		float: left;
 	}
-	.icon img {
-		width: 32px;
-		height: 32px;
+	.productspacer {
+		width: 25px;
+		float: left;
 	}
-	.description {
-		padding-left: 38px;
+	.productverspacer {
+		clear: left;
+		height: 25px;
 	}
-	.updated {
+	.product p {
+		margin-top: 0.25em;
+		text-align: center;
+		font-size: 10pt;
+	}
+	.product .icon {
+		width: 128px;
+		height: 128px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.product .iconShot {
+		border: 1px solid rgb(175,175,175);
+	}
+	.product .dllink {
+		font-size: 8pt;
+	}
+	.product .updated {
 		font-size: 8pt;
 		color: #b03a3a;
 		color: gray;
-	}
-	.flag {
-		width: 16px;
-		height: 11px;
 	}
 	</style>
 </head>
 <body>
 
 <div id="body">
+
 <div id="header"></div>
 <div id="content">
+
+<p class="about">Hello! My name is Kevin Wojniak and this is my website. Below are my current projects. Source code is available at <a href="https://github.com/kainjow">Github</a>.</p>
+<p class="about">Contact me: kainjow@<span style="display:none">null</span>kain<span style="display:none">@blah</span>jow.com</p>
+
+<div class="projectsrow">
+
+	<div class="product">
+	<img class="icon" src="images/bootchamp_icon.png" alt="icon" />
+	<p>
+	<strong>BootChamp</strong> 1.4.1<br/>
+	<span class="updated">Oct 29, 2012</span><br/>
+	Quickly boot into Windows<br/>
+	<a href="/downloads/BootChamp.zip" class="dllink">download for 10.6+</a>
+	</p>
+	</div>
 	
-<p class="about">Hello, my name is Kevin Wojniak and I'm a software developer.</p>
-<p class="about" id="source">Source code (<a href="license.txt">license</a>) is available on <a href="https://github.com/kainjow">Github</a>.<br/>All downloads require Mac OS X 10.6.8 or greater unless stated otherwise.</p>
+	<div class="productspacer">&nbsp;</div>
+	
+	<div class="product">
+	<img class="icon" src="images/semulov_icon.png" alt="icon" />
+	<p>
+	<strong>Semulov</strong> 1.6<br/>
+	<span class="updated">Aug 27, 2012</span><br/>
+	Eject volumes from the menu bar<br/>
+	<a href="/downloads/Semulov.zip" class="dllink">download for 10.6+</a>
+	</p>
+	</div>
+	
+	<div class="productspacer">&nbsp;</div>
+	
+	<div class="product">
+	<img class="icon" src="images/bbencoder_icon.png" alt="icon" />
+	<p>
+	<strong>BBEncoder</strong> 1.1<br/>
+	<span class="updated">Feb 28, 2012</span><br/>
+	Convert rich text to BBCode<br/>
+	<a href="/downloads/BBEncoder.zip" class="dllink">download for 10.5+</a>
+	</p>
+	</div>
 
-<div class="product">
-<div class="icon">
-<img src="images/bootchamp_icon.png" alt="icon" />
-</div>
-<div class="description">
-<p>
-<strong>BootChamp</strong> 1.4.1 <span class="updated">Oct 29, 2012</span>
-<span class="links">
-<a href="/downloads/BootChamp.zip">download</a> | <a href="/downloads/BootChamp_1.2.zip">download v1.2 for OS X 10.5</a> | <a href="images/bootchamp.png">screenshot</a></span>
-<br/>
-BootChamp sits in the menu bar and provides an easy way to restart into your Boot Camp partition without having to hold down the Option key at startup or change the Startup Disk.
-</p>
-</div>
-</div>
-
-<div class="product">
-<div class="icon">
-<img src="images/semulov_icon.png" alt="icon" />
-</div>
-<div class="description">
-<p>
-<strong>Semulov</strong> 1.6 <span class="updated">Aug 27, 2012</span>
-<span class="links">
-<a href="/downloads/Semulov.zip">download</a> | <a href="images/semulov.png">screenshot</a></span>
-<br/>
-Semulov displays mounted volumes in the menu bar instead of cluttering your Desktop.<br/>
-</p>
-</div>
 </div>
 
-<div class="product">
-<div class="icon">
-<img src="images/plugin_icon.png" alt="icon" />
-</div>
-<div class="description">
-<p>
-<strong>ScriptQL</strong> 1.1 <span class="updated">Sept 6, 2012</span>
-<span class="links">
-<a href="/downloads/ScriptQL_qlgenerator.zip">download</a> | <a href="images/scriptql.png">screenshot</a>
-</span>
-<br/>
-A Quick Look plugin for previewing AppleScripts.
-</p>
-</div>
+<div class="productverspacer"></div>
+
+<div class="projectsrow">
+
+	<div class="product">
+	<img class="icon iconShot" src="images/scriptqlIconShot.png" alt="icon" />
+	<p>
+	<strong>ScriptQL</strong> 1.1<br/>
+	<span class="updated">Sept 6, 2012</span><br/>
+	AppleScript Quick Look plugin<br/>
+	<a href="/downloads/ScriptQL_qlgenerator.zip" class="dllink">download for 10.6+</a>
+	</p>
+	</div>
+	
+	<div class="productspacer">&nbsp;</div>
+	
+	<div class="product">
+	<img class="icon iconShot" src="images/spreadIconShot.png" alt="icon" />
+	<p>
+	<strong>Spread</strong> 1.0.1<br/>
+	<span class="updated">Feb 28, 2012</span><br/>
+	Colorful screensaver (<a href="http://tomtheisen.com/spread/">original</a>)<br/>
+	<a href="/downloads/Spread.zip" class="dllink">download for 10.6+</a>
+	</p>
+	</div>
+	
+	<div class="productspacer">&nbsp;</div>
+	
+	<div class="product">
+	<img class="icon" src="images/screensaver_icon.png" alt="icon" />
+	<p>
+	<strong>Pellucid</strong> 1.0.1<br/>
+	<span class="updated">Oct 18, 2012</span><br/>
+	Dimmed desktop screensaver<br/>
+	<a href="/downloads/Pellucid.saver.zip" class="dllink">download for 10.6+</a>
+	</p>
+	</div>
+
 </div>
 
-<div class="product">
-<div class="icon">
-<img src="images/bbencoder_icon.png" alt="icon" />
-</div>
-<div class="description">
-<p>
-<strong>BBEncoder</strong> 1.1 <span class="updated">Feb 28, 2012</span>
-<span class="links">
-<a href="/downloads/BBEncoder.zip">download for OS X 10.5+</a> | <a href="images/bbencoder.png">screenshot</a>
-</span>
-<br/>
-Convert rich text to BBCode for use with online forums.
-</p>
-</div>
-</div>
+<div class="productverspacer"></div>
 
-<div class="product">
-<div class="icon">
-<img src="images/screensaver_icon.png" alt="icon" />
-</div>
-<div class="description">
-<p>
-<strong>Spread</strong> 1.0.1 <span class="updated">Feb 28, 2012</span>
-<span class="links">
-<a href="/downloads/Spread.zip">download</a> | <a href="images/spread.png">screenshot</a>
-</span>
-<br/>
-A port of Tom Theisen's <a href="http://tomtheisen.com/spread/">&lt;canvas&gt;</a> animation to an OS X screensaver.
-</p>
-</div>
-</div>
+<div class="projectsrow">
 
-<div class="product">
-<div class="icon">
-<img src="images/screensaver_icon.png" alt="icon" />
-</div>
-<div class="description">
-<p>
-<strong>Pellucid</strong> 1.0.1 <span class="updated">Oct 18, 2012</span>
-<span class="links">
-<a href="/downloads/Pellucid.saver.zip">download</a>
-</span>
-<br/>
-Screensaver that displays your desktop dimmed.
-</p>
-</div>
-</div>
+	<div class="product">
+	<img class="icon iconShot" src="images/grouchxIconShot.png" alt="icon" />
+	<p>
+	<strong>GrouchX</strong> 1.0<br/>
+	<span class="updated">Sept 6, 2012</span><br/>
+	<a href="http://macintoshgarden.org/apps/the-grouch-25b1">Stand-Alone Grouch</a> beborn
+	</p>
+	</div>
+	
+	<div class="productspacer">&nbsp;</div>
+	
+	<div class="product"> </div>
+	
+	<div class="productspacer">&nbsp;</div>
+	
+	<div class="product"> </div>
 
-<div class="product">
-<div class="icon">
-<img src="images/grouchx.png" alt="icon" />
 </div>
-<div class="description">
-<p>
-<strong>GrouchX</strong> 1.0 <span class="updated">Sept 6, 2012</span>
-<span class="links">
-<a href="https://github.com/kainjow/GrouchX">source code</a>
-</span>
-<br/>
-A Cocoa implementation of Stand-Alone Grouch originally written for the classic Mac OS. For more info, see <a href="http://macintoshgarden.org/apps/the-grouch-25b1">The Grouch</a>.
-</p>
-</div>
-</div>
-
-<p class="contact">kainjow@<span style="display:none">null</span>kain<span style="display:none">@blah</span>jow.com</p>
 
 </div>
 </div>
