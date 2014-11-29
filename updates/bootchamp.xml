@@ -3,13 +3,13 @@
   <channel>
     <title>BootChamp Updates</title>
     <item>
-      <title>Version 1.6.2</title>
+      <title>Version 1.6.3</title>
       <sparkle:releaseNotesLink>http://kainjow.com/updates/bootchamp.htm</sparkle:releaseNotesLink>
       <enclosure url="http://kainjow.com/downloads/BootChamp.zip"
-        sparkle:version="1.6.2"
+        sparkle:version="1.6.3"
         length="1600000"
         type="application/octet-stream"
-        sparkle:dsaSignature="MC0CFA8OMw1DQsIN+LqNai69ccyZfE83AhUA8D5F9zdccBXSHW6oRvyALfdB56g=" />
+        sparkle:dsaSignature="MCwCFEn6vFOIaFnvd8Y3YSrGTt+2NzPQAhQs8jDWh29zo0+ZtxMDlgphFZyIIg==" />
     </item>
   </channel>
 </rss>
