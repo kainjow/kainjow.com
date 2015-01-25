@@ -74,6 +74,15 @@ $projects = array(
 		'link_label' => 'download for 10.6+',
 		'image' => 'images/screensaver_icon.png',
 	),
+	array(
+		'name' => 'FoolSaver',
+		'version' => '1.2.1',
+		'date' => mktime(0, 0, 0, 8, 20, 2014),
+		'summary' => 'Mimic Windows logo screensaver',
+		'link' => '/downloads/FoolSaver.zip',
+		'link_label' => 'download for 10.7+',
+		'image' => 'images/screensaver_icon.png',
+	),
 );
 
 $now = time();
