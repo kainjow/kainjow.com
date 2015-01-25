@@ -174,8 +174,6 @@ foreach ($projects as &$proj) {
 		color: #888;
 	}
 	.isnew {
-		font-variant: small-caps;
-		font-size: 12pt;
 		font-weight: bold;
 		color: #fa0000;
 	}
@@ -219,7 +217,7 @@ for ($row = 0; $row < $num_rows; $row++) {
 	<div class="product">
 		<img class="<?= $img_class ?>" src="<?= $proj['image']; ?>" alt="icon" />
 		<p>
-		<strong><?= $proj['name']; ?></strong> <?= $proj['version']; ?><?php if ($proj['new']) { ?> <span class="isnew">new</span> <?php } ?><br/>
+		<strong><?= $proj['name']; ?></strong> <?= $proj['version']; ?><?php if ($proj['new']) { ?> <span class="isnew">NEW</span><?php } ?><br/>
 		<span class="updated"><?= date('F j, Y', $proj['date']); ?></span><br/>
 		<?= $proj['summary']; ?><br/>
 		<a href="<?= $proj['link']; ?>" class="dllink"><?= $proj['link_label']; ?></a>
