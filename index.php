@@ -3,8 +3,8 @@
 $projects = array(
 	array(
 		'name' => 'BootChamp',
-		'version' => '1.6.4',
-		'date' => mktime(0, 0, 0, 4, 1, 2015),
+		'version' => '1.7',
+		'date' => mktime(0, 0, 0, 8, 15, 2015),
 		'summary' => 'Quickly boot into Windows',
 		'link' => '/downloads/BootChamp.zip',
 		'link_label' => 'download for 10.6+ (64-bit only)',
