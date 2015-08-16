@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Semulov Updates</title>
+    <item>
+      <title>Version 2.1</title>
+	  <link>http://kainjow.com/downloads/Semulov.zip</link>
+      <sparkle:version>2.1</sparkle:version>
+	  <sparkle:releaseNotesLink>http://kainjow.com/updates/semulov.htm</sparkle:releaseNotesLink>
+	  <!-- Semulov 2.0 was missing DSA key -->
+	  <!--
+      <enclosure url="http://kainjow.com/downloads/Semulov.zip"
+        sparkle:version="2.1"
+        length="1600000"
+        type="application/octet-stream"
+        sparkle:dsaSignature="MC0CFDI1t6/8YkA0x3ZWXRjpbJBMsLXRAhUA7mwWv2cfoVmmCMJs9f6b6rlI7Dc=" />
+	  -->
+    </item>
+  </channel>
+</rss>
