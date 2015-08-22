@@ -243,7 +243,7 @@ for ($row = 0; $row < $num_rows; $row++) {
 ?>
 
 <div class="footer">
-	<a href="olderdownloads.htm">Older downloads</a> | <a href="donate.htm">Donate</a>
+	<a href="/downloads/archives/">Download Archives</a> | <a href="donate.htm">Donate</a>
 </div>
 
 </div>
