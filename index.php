@@ -92,8 +92,8 @@ foreach ($projects as &$proj) {
 }
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>kainjow</title>
@@ -189,8 +189,7 @@ foreach ($projects as &$proj) {
 <div id="about">
 <p>Hello! My name is Kevin Wojniak and this is my website. Nice of you to stop by.</p>
 <p>Below are my current projects. Source code is available on <a href="https://github.com/kainjow">GitHub</a>.</p>
-<p>Visit my <a href="http://kainjow.tumblr.com">blog</a> for the latest updates, or you can <a href="http://twitter.com/kainjow">follow</a> me on Twitter.</p>
-<p>Contact me: kainjow@<span style="display:none">null</span>kain<span style="display:none">@blah</span>jow.com</p>
+<p>Visit my <a href="http://kainjow.tumblr.com">blog</a> or follow me on <a href="https://twitter.com/kainjow">Twitter</a> for the latest updates. You can also <a href="/email.php">email</a> me.</p>
 </div>
 
 <?php
