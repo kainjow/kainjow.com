@@ -30,7 +30,8 @@ if (isset($_POST['submit'])) {
 		if (!isset($json['success']) || !$json['success']) {
 			$errmsg = 'reCAPTCHA failed.';
 		} else {
-			$success = mail(KAIN_EMAIL, $subject, "From kainjow.com:\n\n" . $msg, 'From: ' . $email);
+			$body = sprintf("From kainjow.com:\n\nName: %s\n\n%s", $name, $msg);
+			$success = mail(KAIN_EMAIL, $subject, $body, 'From: ' . $email);
 			if (!$success) {
 				$errmsg = 'Failed to send email.';
 			}
