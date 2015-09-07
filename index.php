@@ -90,6 +90,7 @@ $new_days = 86400 * 15;
 foreach ($projects as &$proj) {
 	$proj['new'] = ($now - $proj['date']) <= $new_days;
 }
+unset($proj); // http://stackoverflow.com/a/31043429/412179
 
 ?>
 <!DOCTYPE html>
