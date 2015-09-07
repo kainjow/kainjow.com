@@ -117,7 +117,6 @@ unset($proj); // http://stackoverflow.com/a/31043429/412179
 	<p>Visit my <a href="http://kainjow.tumblr.com">blog</a> or follow me on <a href="https://twitter.com/kainjow">Twitter</a> for the latest updates. You can also <a href="email.php">email</a> me.</p>
 	</div>
 	
-	<div class="container">
 	<div class="row">		
 		<?php
 		foreach ($projects as $proj) {
@@ -134,7 +133,6 @@ unset($proj); // http://stackoverflow.com/a/31043429/412179
 		<?php
 		}
 		?>
-	</div>
 	</div>
 	
 	<div>
