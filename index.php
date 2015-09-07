@@ -122,7 +122,7 @@ foreach ($projects as &$proj) {
 		foreach ($projects as $proj) {
 		?>
 		<div class="col-sm-4 margintop">
-		<img class="img-responsive center-block producticon" src="<?= $proj['image']; ?>" alt="BootChamp">
+		<img class="img-responsive center-block producticon" src="<?= $proj['image']; ?>" alt="<?= $proj['name']; ?>">
 		<p class="text-center productinfo">
 		<span class="projectname"><strong><?= $proj['name']; ?></strong> <?= $proj['version']; ?></span><?php if ($proj['new']) { ?> <span class="isnew">NEW</span><?php } ?><br>
 		<span class="updated"><?= date('F j, Y', $proj['date']); ?></span><br>
