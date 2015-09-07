@@ -93,159 +93,56 @@ foreach ($projects as &$proj) {
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>kainjow</title>
-	<style type="text/css">
-	body {
-		margin: 0;
-		padding: 10px;
-	}
-	#body {
-		width: 650px;
-		font-family: sans-serif;
-		margin: 0 auto;
-	}
-	#header {
-		width: 100%;
-		height: 100px;
-		background-color: black;
-		background-image: url(images/kainjow.png);
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-	a {
-		color: #0060ff;
-		text-decoration: none;
-	}
-	a:hover {
-		text-decoration: underline;
-	}
-	#about {
-		font-size: 12pt;
-	}
-	.projectsrow {
-		width: 100%;
-	}
-	.product {
-		width: 200px;
-		float: left;
-	}
-	.productspacer {
-		width: 25px;
-		float: left;
-	}
-	.productverspacer {
-		clear: left;
-		height: 25px;
-	}
-	.product p {
-		margin-top: 0.25em;
-		text-align: center;
-		font-size: 10pt;
-	}
-	.product .icon {
-		width: 128px;
-		height: 128px;
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.product .iconShot {
-		border: 1px solid rgb(175,175,175);
-	}
-	.product .dllink {
-		font-size: 8pt;
-	}
-	.product .updated {
-		font-size: 8pt;
-		color: #b03a3a;
-		color: gray;
-	}
-	.footer {
-		clear: left;
-		padding-top: 20px;
-		font-size: 8pt;
-		text-align: center;
-	}
-	.footer a {
-		text-decoration: underline;
-		color: #888;
-	}
-	.isnew {
-		font-weight: bold;
-		color: #fa0000;
-	}
-	</style>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 
-<div id="body">
-
-<div id="header"></div>
-<div id="content">
-
-<div id="about">
-<p>Hello! My name is Kevin Wojniak and this is my website. Nice of you to stop by.</p>
-<p>Below are my current projects. Source code is available on <a href="https://github.com/kainjow">GitHub</a>.</p>
-<p>Visit my <a href="http://kainjow.tumblr.com">blog</a> or follow me on <a href="https://twitter.com/kainjow">Twitter</a> for the latest updates. You can also <a href="/email.php">email</a> me.</p>
-</div>
-
-<?php
-$per_row = 3;
-$project_rows = array();
-for ($i = 0; $i < count($projects); $i++) {
-	if ($i % $per_row == 0) {
-		$project_rows[] = array();
-	}
-	$project_rows[count($project_rows) - 1][] = $projects[$i];
-}
-
-$num_rows = count($project_rows);
-for ($row = 0; $row < $num_rows; $row++) {
-	$project_row = $project_rows[$row];
-?>
-<div class="projectsrow">
-<?php
-	for ($i = 0; $i < count($project_row); $i++) {
-		$proj = $project_row[$i];
-		$img_class = isset($proj['is_screenshot']) && $proj['is_screenshot'] ? 'icon iconShot' : 'icon';
-?>
-
-	<div class="product">
-		<img class="<?= $img_class ?>" src="<?= $proj['image']; ?>" alt="icon" />
-		<p>
-		<strong><?= $proj['name']; ?></strong> <?= $proj['version']; ?><?php if ($proj['new']) { ?> <span class="isnew">NEW</span><?php } ?><br/>
-		<span class="updated"><?= date('F j, Y', $proj['date']); ?></span><br/>
-		<?= $proj['summary']; ?><br/>
-		<a href="<?= $proj['link']; ?>" class="dllink"><?= $proj['link_label']; ?></a>
-		</p>
+<div class="container">
+		
+	<div class="logo">
+	<a href="/"><img class="img-responsive center-block" src="images/kainjow.png" alt="kainjow"></a>
 	</div>
 	
-<?php
-		if ($i < (count($project_row) - 1)) {
-?>
-	<div class="productspacer">&nbsp;</div>
-<?php
+	<div class="margintop">
+	<p>Hello! My name is Kevin Wojniak and this is my website. Nice of you to stop by.</p>
+	<p>Below are my current projects. Source code is available on <a href="https://github.com/kainjow">GitHub</a>.</p>
+	<p>Visit my <a href="http://kainjow.tumblr.com">blog</a> or follow me on <a href="https://twitter.com/kainjow">Twitter</a> for the latest updates. You can also <a href="email.php">email</a> me.</p>
+	</div>
+	
+	<div class="container">
+	<div class="row">		
+		<?php
+		foreach ($projects as $proj) {
+		?>
+		<div class="col-sm-4 margintop">
+		<img class="img-responsive center-block producticon" src="<?= $proj['image']; ?>" alt="BootChamp">
+		<p class="text-center productinfo">
+		<span class="projectname"><strong><?= $proj['name']; ?></strong> <?= $proj['version']; ?></span><?php if ($proj['new']) { ?> <span class="isnew">NEW</span><?php } ?><br>
+		<span class="updated"><?= date('F j, Y', $proj['date']); ?></span><br>
+	  	<?= $proj['summary']; ?><br>
+	  	<small><a href="<?= $proj['link']; ?>"><?= $proj['link_label']; ?></a></small>
+		</p>
+		</div>
+		<?php
 		}
-	}
-?>
-</div>
-<?php
-	if ($row < ($num_rows - 1)) {
-?>
-<div class="productverspacer"></div>
-<?php
-	}
-}
-?>
+		?>
+	</div>
+	</div>
+	
+	<div>
+	<p class="footer text-center margintop">
+		<a href="/downloads/archives/">Download Archives</a> | <a href="donate.php">Donate</a><br>
+		Copyright <?= date('Y'); ?> Kevin Wojniak
+	</p>
+	</div>
 
-<div class="footer">
-	<a href="/downloads/archives/">Download Archives</a> | <a href="donate.htm">Donate</a>
-</div>
-
-</div>
 </div>
 
 </body>

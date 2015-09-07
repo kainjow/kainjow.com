@@ -41,36 +41,15 @@ if (isset($_POST['submit'])) {
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>kainjow - Email</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>kainjow - Email</title>	
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 	<style type="text/css">
-	body {
-		margin: 0;
-		padding: 10px;
-	}
-	#body {
-		width: 650px;
-		font-family: sans-serif;
-		font-size: 10pt;
-		margin: 0 auto;
-	}
-	#header {
-		width: 100%;
-		height: 100px;
-		background-color: black;
-		background-image: url(images/kainjow.png);
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-	a {
-		color: #0060ff;
-		text-decoration: none;
-	}
-	a:hover {
-		text-decoration: underline;
-	}
 	.errmsg {
 		color: red;
 		font-weight: bold;
@@ -80,31 +59,56 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
 
-<div id="body">
-
-<div id="header"></div>
-
-<?php
-if ($errmsg) {
-	echo "<p class='errmsg'>$errmsg</p>\n";
-} else if ($success) {
-	echo "<p>Email sent.</p>\n";
-}
-if (!$success) {
-?>
-<form action="email.php" method="post">
-<p>Name<br/><input type="text" name="name" value="<?php echo $name; ?>" /></p>
-<p>Email<br/><input type="text" name="email" value="<?php echo $email; ?>" /></p>
-<p>Subject<br/><input type="text" name="subject" value="<?php echo $subject; ?>" /></p>
-<p>Message<br/><textarea name="message" cols="50" rows="12"><?php echo $msg; ?></textarea></p>
-<div class="g-recaptcha" data-sitekey="6LeDpgsTAAAAAIDB6i38JErvO3vtvpBtbHouIO-1"></div>
-<p><input type="submit" name="submit" value="Send" /></p>
-</form>
-<?php
-}
-?>
+<div class="container">
+		
+	<div class="logo">
+	<a href="/"><img class="img-responsive center-block" src="images/kainjow.png" alt="kainjow"></a>
+	</div>
+	
+	<div class="margintop">		
+	<?php
+	if ($errmsg) {
+		echo "<div class='alert alert-danger'><p>$errmsg</p></div>\n";
+	} else if ($success) {
+		echo "<div class='alert alert-success'><p>Email sent.</p></div>\n";
+	}
+	if (!$success) {
+	?>
+	<form action="email.php" method="post">
+	<div class="form-group">
+		<label for="name">Name</label>
+		<input id="name" class="form-control" type="text" name="name" value="<?php echo $name; ?>" />
+	</div>
+	<div class="form-group">
+		<label for="email">Email</label>
+		<input id="email" class="form-control" type="email" name="email" value="<?php echo $email; ?>" />
+	</div>
+	<div class="form-group">
+		<label for="subject">Subject</label>
+		<input id="subject" class="form-control" type="text" name="subject" value="<?php echo $subject; ?>" />
+	</div>
+	<div class="form-group">
+		<label for="message">Message</label>
+		<textarea id="message" class="form-control" name="message" rows="3"><?php echo $msg; ?></textarea>
+	</div>
+	<div class="g-recaptcha form-group" data-sitekey="6LeDpgsTAAAAAIDB6i38JErvO3vtvpBtbHouIO-1"></div>
+	<div class="form-group">
+	<input class="btn btn-primary" type="submit" name="submit" value="Send">
+	</div>
+	</form>
+	<?php
+	}
+	?>
+	</div>
+	
+	<div>
+	<p class="footer text-center margintop">
+		<a href="/downloads/archives/">Download Archives</a> | <a href="donate.php">Donate</a><br>
+		Copyright <?= date('Y'); ?> Kevin Wojniak
+	</p>
+	</div>
 
 </div>
-
+	
 </body>
 </html>
