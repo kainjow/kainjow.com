@@ -117,11 +117,9 @@ unset($proj); // http://stackoverflow.com/a/31043429/412179
 	<p>Visit my <a href="http://kainjow.tumblr.com">blog</a> or follow me on <a href="https://twitter.com/kainjow">Twitter</a> for the latest updates. You can also <a href="email.php">email</a> me.</p>
 	</div>
 	
-	<div class="row">		
-		<?php
-		foreach ($projects as $proj) {
-		?>
-		<div class="col-sm-4 margintop">
+	<div class="row">
+		<?php foreach ($projects as $proj): ?>
+		<div class="col-sm-4 col-xs-6 margintop">
 		<img class="img-responsive center-block producticon" src="<?= $proj['image']; ?>" alt="<?= $proj['name']; ?>">
 		<p class="text-center productinfo">
 		<span class="projectname"><strong><?= $proj['name']; ?></strong> <?= $proj['version']; ?></span><?php if ($proj['new']) { ?> <span class="isnew">NEW</span><?php } ?><br>
@@ -130,9 +128,7 @@ unset($proj); // http://stackoverflow.com/a/31043429/412179
 	  	<small><a href="<?= $proj['link']; ?>"><?= $proj['link_label']; ?></a></small>
 		</p>
 		</div>
-		<?php
-		}
-		?>
+		<?php endforeach ?>
 	</div>
 	
 	<div>
