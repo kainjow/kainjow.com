@@ -122,10 +122,10 @@ unset($proj); // http://stackoverflow.com/a/31043429/412179
 		<div class="col-sm-4 col-xs-6 margintop">
 		<img class="img-responsive center-block producticon" src="<?= $proj['image']; ?>" alt="<?= $proj['name']; ?>">
 		<p class="text-center productinfo">
-		<span class="projectname"><strong><?= $proj['name']; ?></strong> <?= $proj['version']; ?></span><?php if ($proj['new']) { ?> <span class="isnew">NEW</span><?php } ?><br>
+		<span class="projectname"><strong><?= $proj['name'] ?></strong> <?= $proj['version'] ?></span><?php if ($proj['new']): ?> <span class="isnew">NEW</span><?php endif ?><br>
 		<span class="updated"><?= date('F j, Y', $proj['date']); ?></span><br>
-	  	<?= $proj['summary']; ?><br>
-	  	<small><a href="<?= $proj['link']; ?>"><?= $proj['link_label']; ?></a></small>
+	  	<?= $proj['summary'] ?><br>
+	  	<small><a href="<?= $proj['link'] ?>"><?= $proj['link_label'] ?></a></small>
 		</p>
 		</div>
 		<?php endforeach ?>
