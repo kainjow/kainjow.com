@@ -125,6 +125,10 @@ unset($proj); // http://stackoverflow.com/a/31043429/412179
 	<p>Visit my <a href="http://kainjow.tumblr.com">blog</a> or follow me on <a href="https://twitter.com/kainjow">Twitter</a> for the latest updates. You can also <a href="email.php">email</a> me.</p>
 	</div>
 	
+	<div class="alert alert-warning text-center"><p>
+		<a href="http://kainjow.tumblr.com/post/128933657269/bootchamp-and-el-capitan" class="alert-link">Import information about BootChamp and OS X El Capitan</a>
+	</p></div>
+	
 	<?php foreach ($projects as $groupName => $groupProjects): ?>
 	<div class="panel panel-default">
 	  <div class="panel-heading">

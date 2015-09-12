@@ -72,8 +72,11 @@ if (isset($_POST['submit'])) {
 	} else if ($success) {
 		echo "<div class='alert alert-success'><p>Email sent.</p></div>\n";
 	}
-	if (!$success) {
 	?>
+	<div class="alert alert-warning text-center"><p>
+		<a href="http://kainjow.tumblr.com/post/128933657269/bootchamp-and-el-capitan" class="alert-link">Import information about BootChamp and OS X El Capitan</a>
+	</p></div>
+	<?php if (!$success): ?>
 	<form action="email.php" method="post">
 	<div class="form-group">
 		<label for="name">Name</label>
@@ -96,9 +99,7 @@ if (isset($_POST['submit'])) {
 	<input class="btn btn-primary" type="submit" name="submit" value="Send">
 	</div>
 	</form>
-	<?php
-	}
-	?>
+	<?php endif ?>
 	</div>
 	
 	<div>
