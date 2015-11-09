@@ -1,0 +1,42 @@
+{% extends 'base.htm.twig' %}
+
+{% block content %}
+<div class="margintop">
+<p>Hello! My name is Kevin Wojniak and this is my website. Nice of you to stop by.</p>
+<p>Below are my current projects. Source code is available on <a href="https://github.com/kainjow">GitHub</a>.</p>
+<p>Visit my <a href="http://kainjow.tumblr.com">blog</a> or follow me on <a href="https://twitter.com/kainjow">Twitter</a> for the latest updates. You can also <a href="/email">email</a> me.</p>
+</div>
+	
+<div class="alert alert-warning text-center">
+<p>
+<a href="http://kainjow.tumblr.com/post/128933657269/bootchamp-and-el-capitan" class="alert-link">Import information about BootChamp and OS X El Capitan</a>
+</p>
+</div>
+	
+{% for groupName, groupProjects in projects %}
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">{{ groupName }}</h3>
+	</div>
+
+	<div class="panel-body">
+		<div class="row">	
+	
+		{% for proj in groupProjects %}
+		<div class="col-sm-4 col-xs-6 margintop">
+			<img class="img-responsive center-block producticon" src="{{ proj.image }}" alt="{{ proj.name }}">
+			<p class="text-center productinfo">
+				<span class="projectname"><strong>{{ proj.name }}</strong> {{ proj.version }}</span>{% if proj.new %} <span class="isnew">NEW</span>{% endif %}<br>
+				<span class="updated">{{ proj.date|date('F j, Y') }}</span><br>
+	  			{{ proj.summary }}<br>
+	  			<small><a href="{{ proj.link }}">{{ proj.link_label }}</a></small>
+			</p>
+		</div>
+		{% endfor %}
+		
+    	</div>	
+	</div>
+</div>
+{% endfor %}
+
+{% endblock %}

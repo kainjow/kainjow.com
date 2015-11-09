@@ -1,0 +1,7 @@
+{
+    "require": {
+        "slim/slim": "^2.6",
+        "twig/twig": "~1.0",
+        "google/recaptcha": "~1.1"
+    }
+}
