@@ -117,10 +117,6 @@ $app->get('/', function () use ($app, $twig) {
 	]);
 });
 
-$app->get('/donate', function () use ($twig) {
-	echo $twig->render('donate.htm.twig');
-});
-
 $app->get('/email', function () use ($twig) {
 	echo $twig->render('email.htm.twig');
 });
