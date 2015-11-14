@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Require check for kainjow.com so other hosted sites work
+
+# Force https
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^kainjow.com$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+# Slim
+RewriteCond %{HTTP_HOST} ^kainjow.com$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/downloads/archives
+RewriteRule ^ index.php [QSA,L]
