@@ -5,10 +5,3 @@ RewriteCond %{HTTPS} off
 RewriteCond %{HTTP_HOST} ^kainjow.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www.kainjow.com$
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
-
-# Slim
-RewriteCond %{HTTP_HOST} ^kainjow.*$ [OR]
-RewriteCond %{HTTP_HOST} ^www.kainjow.*$
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} !/downloads/archives
-RewriteRule ^ index.php [QSA,L]
