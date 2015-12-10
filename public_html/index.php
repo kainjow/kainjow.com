@@ -121,42 +121,4 @@ $app->get('/email', function () use ($twig) {
 	echo $twig->render('email.htm.twig');
 });
 
-$app->post('/email', function () use ($twig, $rootdir) {
-	$errmsg = false;
-	$success = false;
-	$name = isset($_POST['name']) ? trim($_POST['name']) : '';
-	$email = isset($_POST['email']) ? trim($_POST['email']) : '';
-	$subject = isset($_POST['subject']) ? trim($_POST['subject']) : '';
-	$msg = isset($_POST['message']) ? trim($_POST['message']) : '';
-	$recaptcha_response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
-	if (empty($name) || empty($subject) || empty($msg) || empty($recaptcha_response)) {
-		$errmsg = 'Please fill out all fields.';
-	} else if (filter_var($email, FILTER_VALIDATE_EMAIL) === FALSE) {
-		$errmsg = 'Email address is invalid.';
-	} else {
-		require($rootdir . '/config.php');
-		// Use cURL because the default post uses file_get_contents() which is not allowed on current host
-		$recaptcha = new \ReCaptcha\ReCaptcha(KAIN_RECAPTCHA_SECRET, new \ReCaptcha\RequestMethod\CurlPost());
-		$resp = $recaptcha->verify($recaptcha_response, $_SERVER['REMOTE_ADDR']);
-		if ($resp->isSuccess()) {
-			$body = sprintf("From kainjow.com:\n\nName: %s\n\n%s", $name, $msg);
-			$success = mail(KAIN_EMAIL, $subject, $body, 'From: ' . $email);
-			if (!$success) {
-				$errmsg = 'Failed to send email.';
-			}
-		} else {
-			$errmsg = 'reCAPTCHA failed: ' . implode(',', $resp->getErrorCodes());
-		}
-	}
-	
-	echo $twig->render('email.htm.twig', [
-		'errmsg' => $errmsg,
-		'success' => $success,
-		'name' => $name,
-		'email' => $email,
-		'subject' => $subject,
-		'msg' => $msg,
-	]);
-});
-
 $app->run();

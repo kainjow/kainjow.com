@@ -4,10 +4,10 @@
 <style type="text/css">
 .errmsg {
 	color: red;
-	font-weight: bold;
 }
 </style>
 <script src='https://www.google.com/recaptcha/api.js'></script>
+<script src='/js/jquery-2.1.4.min.js'></script>
 {% endblock %}
 
 {% block content %}
@@ -16,35 +16,34 @@
 	<a href="http://kainjow.tumblr.com/post/128933657269/bootchamp-and-el-capitan" class="alert-link">Import information about BootChamp and OS X El Capitan</a>
 </p></div>
 
-{% if errmsg %}
-<div class='alert alert-danger'><p>{{ errmsg }}</p></div>
-{% elseif success %}
-<div class='alert alert-success'><p>Email sent.</p></div>
-{% endif %}
-
 {% if not success %}
-<form action="/email" method="post">
-<div class="form-group">
-	<label for="name">Name</label>
-	<input id="name" class="form-control" type="text" name="name" value="{{ name }}" />
-</div>
-<div class="form-group">
-	<label for="email">Email</label>
-	<input id="email" class="form-control" type="email" name="email" value="{{ email }}" />
-</div>
-<div class="form-group">
-	<label for="subject">Subject</label>
-	<input id="subject" class="form-control" type="text" name="subject" value="{{ subject }}" />
-</div>
-<div class="form-group">
-	<label for="message">Message</label>
-	<textarea id="message" class="form-control" name="message" rows="3">{{ msg }}</textarea>
-</div>
+<p>Complete the reCAPTCHA and click Show to reveal my email address (this helps reduce spam).</p>
+<noscript><p class="errmsg">JavaScript is required.</p></noscript>
+<script>
+$(function() { // document.onready alias
+	$('form').on('submit', function(e) {
+		e.preventDefault(); // prevent form from submitting
+		$('#submit').prop('disabled', true).prop('value', 'Loading...');
+		$('#output').empty();
+		$.getJSON('/show-email.php?' + $(this).serialize(), function(data) {
+			$('#submit').prop('disabled', false).prop('value', 'Show');
+			if (data.email) {
+				$('#output').text(data.email);
+			} else {
+				$('#output').text(data.error ? data.error : 'An unknown error occurred, please try again.');
+			}
+			grecaptcha.reset();
+		});
+	});
+});
+</script>
+<form>
 <div class="g-recaptcha form-group" data-sitekey="6LeDpgsTAAAAAIDB6i38JErvO3vtvpBtbHouIO-1"></div>
 <div class="form-group">
-<input class="btn btn-primary" type="submit" value="Send">
+<input class="btn btn-primary" id="submit" type="submit" value="Show">
 </div>
 </form>
+<p id="output"></p>
 {% endif %}
 </div>
 {% endblock %}
