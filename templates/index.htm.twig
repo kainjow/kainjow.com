@@ -23,7 +23,7 @@
 		<div class="row">	
 	
 		{% for proj in groupProjects %}
-		<div class="col-sm-4 col-xs-6 margintop">
+		<div class="col-sm-4 col-xs-12 margintop">
 			<img class="img-responsive center-block producticon" src="{{ proj.image }}" alt="{{ proj.name }}">
 			<p class="text-center productinfo">
 				<span class="projectname"><strong>{{ proj.name }}</strong> {{ proj.version }}</span>{% if proj.new %} <span class="isnew">NEW</span>{% endif %}<br>
