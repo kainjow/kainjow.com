@@ -107,7 +107,6 @@ unset($proj); // http://stackoverflow.com/a/31043429/412179
 
 $files = array(
 	'' => $twig->render('index.htm.twig', ['projects' => $projects]),
-	'email' => $twig->render('email.htm.twig'),
 );
 $output_dir = 'public_html/';
 foreach ($files as $name => $html) {
