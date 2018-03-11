@@ -8,15 +8,6 @@ $twig = new Twig_Environment($loader, array());
 $projects = array(
 	'Apps' => array(
 		array(
-			'name' => 'BootChamp',
-			'version' => '1.7',
-			'date' => mktime(0, 0, 0, 8, 15, 2015),
-			'summary' => 'Quickly boot into Windows',
-			'link' => '/downloads/BootChamp.zip',
-			'link_label' => 'download for 10.6+ (64-bit only)',
-			'image' => '/images/bootchamp_icon.png',
-		),
-		array(
 			'name' => 'Semulov',
 			'version' => '2.3',
 			'date' => mktime(0, 0, 0, 3, 11, 2018),
@@ -24,6 +15,15 @@ $projects = array(
 			'link' => '/downloads/Semulov.zip',
 			'link_label' => 'download for 10.7+',
 			'image' => '/images/semulov_icon.png',
+		),
+		array(
+			'name' => 'BootChamp',
+			'version' => '1.7',
+			'date' => mktime(0, 0, 0, 8, 15, 2015),
+			'summary' => 'Quickly boot into Windows',
+			'link' => '/downloads/BootChamp.zip',
+			'link_label' => 'download for 10.6+ (64-bit only)',
+			'image' => '/images/bootchamp_icon.png',
 		),
 		array(
 			'name' => 'CrashCrier',
