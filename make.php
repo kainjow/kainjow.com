@@ -97,7 +97,7 @@ $projects = array(
 );
 
 $now = time();
-$new_days = 86400 * 15;
+$new_days = 86400 * 30;
 foreach ($projects as $groupName => &$subProjects) {
 	foreach ($subProjects as &$proj) {
 		$proj['new'] = ($now - $proj['date']) <= $new_days;
