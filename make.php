@@ -9,8 +9,8 @@ $projects = array(
 	'Apps' => array(
 		array(
 			'name' => 'Semulov',
-			'version' => '2.3',
-			'date' => mktime(0, 0, 0, 3, 11, 2018),
+			'version' => '2.3.1',
+			'date' => mktime(0, 0, 0, 3, 17, 2018),
 			'summary' => 'Eject volumes from the menu bar',
 			'link' => '/downloads/Semulov.zip',
 			'link_label' => 'download for 10.7+',
