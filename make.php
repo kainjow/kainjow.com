@@ -21,8 +21,8 @@ $projects = array(
 			'version' => '1.7',
 			'date' => mktime(0, 0, 0, 8, 15, 2015),
 			'summary' => 'Quickly boot into Windows',
-			'link' => '/downloads/BootChamp.zip',
-			'link_label' => 'download for 10.6+ (64-bit only)',
+			'link' => 'http://kainjow.tumblr.com/post/128933657269/bootchamp-and-el-capitan',
+			'link_label' => '[discontinued]',
 			'image' => '/images/bootchamp_icon.png',
 		),
 		array(
