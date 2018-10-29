@@ -3,8 +3,21 @@
   <channel>
     <title>Semulov Updates</title>
     <item>
-      <title>Version 2.3.1</title>
+      <title>Version 2.4</title>
 	  <link>https://kainjow.com/downloads/Semulov.zip</link>
+      <sparkle:version>2.4</sparkle:version>
+	  <sparkle:releaseNotesLink>https://kainjow.com/updates/semulov.htm</sparkle:releaseNotesLink>
+      <enclosure
+        url="https://kainjow.com/downloads/Semulov.zip"
+        sparkle:version="2.4"
+        type="application/octet-stream"
+        sparkle:dsaSignature="MC0CFCGNmh00Phf3LaHX8uaWPRzwJFiAAhUAmG8Qmd3EEQGAMcqWM/L5OcpxDDs="
+      />
+      <sparkle:minimumSystemVersion>10.8</sparkle:minimumSystemVersion>
+    </item>
+    <item>
+      <title>Version 2.3.1</title>
+	  <link>https://kainjow.com/downloads/Semulov_2.3.1.zip</link>
       <sparkle:version>2.3.1</sparkle:version>
 	  <sparkle:releaseNotesLink>https://kainjow.com/updates/semulov.htm</sparkle:releaseNotesLink>
       <enclosure
